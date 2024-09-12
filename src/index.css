@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Malgun Gothic';
+  src: url('../public/fonts/malgun-gothic.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  body {
+    @apply scroll-smooth;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.4;
+    color: #ffffff;
+    font-family: 'Malgun Gothic', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+/* @layer components {
+}
+
+@layer utilities {
+} */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade {
+  animation: fade 0.5s;
+}
+
+@keyframes flipDown {
+  from {
+    transform: rotateX(-90deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+.flip-down {
+  animation: flipDown 0.3s ease-in-out;
+}
+
+.popup-notices .content img {
+  width: 100%;
+  height: 100%;
+}
+
+.popup-notices .content::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+.popup-notices .content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Handle */
+.popup-notices .content::-webkit-scrollbar-thumb {
+  background: #d8d8d8;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.popup-notices .content::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.swiper-container {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100dvh;
+  min-height: 0;
+  min-width: 0;
+}
+
+/* !IMPORTANT: some layout can broken if missing this !!! */
+.swiper-wrapper .flex > div {
+  min-width: 0;
+  min-height: 0;
+}
+
+.swiper-wrapper {
+  height: 100% !important;
+}
+
+.swiper-slide {
+  height: 100% !important;
+}
+
+.ant-select-selector {
+  border-radius: 4px !important;
+  &:hover {
+    border-color: transparent !important;
+  }
+  &:focus {
+    border-color: transparent !important;
+  }
+}
+
+/*Animation Noti casino + slot*/
+@keyframes dancing {
+  0%,
+  100% {
+    transform: translateY(-90%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.dance {
+  animation: dancing 1s infinite;
+}
+
+@keyframes flyAndFade {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+}
+
+.danceMoney {
+  animation: flyAndFade 2s ease-in-out forwards;
+}
+
+.ant-pagination .ant-pagination-options {
+  @apply hidden;
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.main_scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+.main_scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Handle */
+.main_scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.main_scrollbar:hover::-webkit-scrollbar-thumb {
+  background: #d8d8d8;
+}
+
+.main_scrollbar_horizontal::-webkit-scrollbar:horizontal {
+  height: 1px;
+}
+
+/* Track */
+.main_scrollbar_horizontal::-webkit-scrollbar-track:horizontal {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Handle */
+.main_scrollbar_horizontal::-webkit-scrollbar-thumb:horizontal {
+  background: transparent;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.main_scrollbar_horizontal:hover::-webkit-scrollbar-thumb:horizontal {
+  background: #dd9a2e;
+}
+
+@keyframes pulse-countdown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.countdown-timer {
+  animation: pulse-countdown 3s infinite;
+}
+
+.mini-game-border {
+  height: 3px;
+  background: linear-gradient(90deg, #414e8e 0%, #a0d9fc 47.63%, #414e8e 98.62%);
+}
